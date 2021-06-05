@@ -1,0 +1,5 @@
+.vertical-line {
+    margin-top: 8px;
+    border-left: 3px solid rgba(255,255,255,.5);
+    height: 28px;
+  }
