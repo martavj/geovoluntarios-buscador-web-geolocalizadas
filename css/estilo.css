@@ -1,5 +1,11 @@
+#mapDiv{
+
+  height:500px;
+  width:100%;
+}
+
 .vertical-line {
-    margin-top: 8px;
-    border-left: 3px solid rgba(255,255,255,.5);
-    height: 28px;
-  }
+  margin-top: 8px;
+  border-left: 3px solid rgba(255,255,255,.5);
+  height: 28px;
+}

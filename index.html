@@ -1,17 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>InfoRiesgo</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+		
+		<title>InfoRiesgo</title>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/estilo.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-</head>
+	
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"> 
+		<link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/dark/main.css"/>
+		<link rel="stylesheet" href="./css/estilo.css">	
+
+		<script src="https://js.arcgis.com/4.18/"></script>
+	  </head>
+<script>
+
+require(["esri/config","esri/Map", "esri/views/MapView", "esri/widgets/Locate", "esri/widgets/BasemapToggle",     "esri/layers/FeatureLayer", "esri/widgets/Search", "esri/layers/GraphicsLayer", "esri/Graphic"], function (esriConfig,Map, MapView, Locate, BasemapToggle, FeatureLayer, Search,GraphicsLayer, Graphic) {
+
+esriConfig.apiKey = "AAPK2ca6b7846e0841c8bcba6dd9cf360db76sr1bqGdjj7ZVHDmq4NhYQke3_PojP3lBlybETdhqNgGAfpz65XQA6YxpnfKGaVr";
+
+const map = new Map({
+  //basemap: "arcgis-navigation" 
+  basemap: "arcgis-topographic" // Basemap layer service
+});
+
+const view = new MapView({
+  map: map,
+  center: [-3.600833
+, 37.178055], // Longitude, latitude
+  zoom: 13, // Zoom level
+  container: "mapDiv" // Div element
+});
+
+
+console.log(view.locate);
+console.log(view.center.latitude);
+console.log(view.center.longitude);
+
+const locationLatitude = null;
+const locationLongitude = null;
+
+
+const locate = new Locate({
+          view: view,
+          useHeadingEnabled: false,
+          goToOverride: function(view, options) {
+            options.target.scale = 1500;
+			console.log(options.target);
+            return view.goTo(options.target);
+          }
+		  
+        });
+
+
+view.ui.add(locate, "top-left");
+
+
+
+const basemapToggle = new BasemapToggle({
+        view: view,
+        nextBasemap: "arcgis-imagery"
+     });
+
+      view.ui.add(basemapToggle,"bottom-right");
+
+const search = new Search({  //Add Search widget
+      view: view
+    });
+
+    view.ui.add(search, "top-right"); 
+
+	const graphicsLayer = new GraphicsLayer();
+map.add(graphicsLayer);
+
+const point = {
+  type: 'point',
+  longitude: view.center.longitude, 
+  latitude: view.center.latitude 
+};
+
+const simpleMarkerSymbol = { 
+  type: "simple-marker", 
+  color: [226, 119, 40], 
+  outline: { 
+    color: [255, 255, 255], 
+    width: 1 
+  } 
+}; 
+
+const pointGraphic = new Graphic ({
+  geometry: point,
+  symbol: simpleMarkerSymbol
+});
+
+graphicsLayer.add(pointGraphic);
+
+
+
+
+});
+</script>
 
 <body>
      <!--Barra de navegación-->
@@ -59,7 +150,7 @@
         </div>
 	</nav>
 	<section>
-		<h3>Buscador de web geolocalizadas</h3>
+		<div id="mapDiv"></div>
 	</section>
 </body>
 
