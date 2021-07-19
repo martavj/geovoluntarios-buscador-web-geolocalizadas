@@ -6,7 +6,7 @@ require([
   "esri/geometry/geometryEngine",
 ], function (esriConfig, Search, GeoJSONLayer, Locator, geometryEngine) {
   esriConfig.apiKey =
-    "AAPK2ca6b7846e0841c8bcba6dd9cf360db76sr1bqGdjj7ZVHDmq4NhYQke3_PojP3lBlybETdhqNgGAfpz65XQA6YxpnfKGaVr";
+    "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
 
   //Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
@@ -33,16 +33,18 @@ require([
   let feature;
 
   search.on("select-result", function (event) {
-    feature = event.results.feature;
+    console.log(event);
+    feature = event.result.feature.geometry;
+    console.log(feature);
     latitudeLocation = feature.latitude;
     longitudeLocation = feature.longitude;
+    console.log(latitudeLocation);
+    console.log(longitudeLocation);
     location = {
       type: "point",
       longitude: longitudeLocation,
       latitude: latitudeLocation,
     };
-    console.log(feature);
-    console.log(location);
   });
 
   //load the data as a new layer
