@@ -3,7 +3,10 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal 1",
+        "url": "http://myportal.com/Portal1"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -19,7 +22,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal 2",
+        "url": "http://myportal.com/Portal2"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [-3.679609559476375, 36.73392412787112]
@@ -51,7 +57,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal casi extremeño",
+        "url": "http://myportal.com/Portal3"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -67,7 +76,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal noreste de andalucía",
+        "url": "http://myportal.com/Portal4"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -83,7 +95,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal de riesgo de Almería",
+        "url": "http://myportal.com/Portal5"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
