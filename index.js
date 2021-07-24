@@ -17,11 +17,9 @@ require([
   GraphicsLayer,
   Graphic
 ) {
-  // esriConfig.apiKey =
-  //   "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
-
   esriConfig.apiKey =
-    "AAPKe354c005fa8d472e87247458291f36f2PozSnMSRbTdahr63Z7a6Scx6GnwUuPUgxOlnNrId6EUOrMevHbpf6T7PuC9NVZwF";
+  "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
+
 
   //Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
