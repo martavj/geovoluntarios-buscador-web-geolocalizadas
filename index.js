@@ -3,7 +3,20 @@ require([
   "esri/widgets/Search",
   "esri/layers/GeoJSONLayer",
   "esri/tasks/Locator",
-], function (esriConfig, Search, GeoJSONLayer, Locator) {
+  "esri/Map",
+  "esri/views/MapView",
+  "esri/layers/GraphicsLayer",
+  "esri/Graphic",
+], function (
+  esriConfig,
+  Search,
+  GeoJSONLayer,
+  Locator,
+  Map,
+  MapView,
+  GraphicsLayer,
+  Graphic
+) {
   // esriConfig.apiKey =
   //   "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
 
@@ -54,8 +67,46 @@ require([
             buttonShowMap.innerHTML = "Ver Localización";
             resultsBoxEl.appendChild(buttonShowMap);
 
+            //When we click on the ver localizacion button, a map is created plotting the location
             buttonShowMap.onclick = function () {
-              console.log("Show map");
+              const map = new Map({
+                basemap: "arcgis-navigation",
+              });
+
+              const view = new MapView({
+                map: map,
+                container: "map",
+                center: [
+                  event.result.feature.geometry.longitude,
+                  event.result.feature.geometry.latitude,
+                ],
+                zoom: 12,
+              });
+
+              const graphicsLayer = new GraphicsLayer();
+              map.add(graphicsLayer);
+
+              const point = {
+                type: "point",
+                longitude: event.result.feature.geometry.longitude,
+                latitude: event.result.feature.geometry.latitude,
+              };
+
+              const simpleMarkerSymbol = {
+                type: "simple-marker",
+                color: [226, 119, 40],
+                outline: {
+                  color: [255, 255, 255],
+                  width: 1,
+                },
+              };
+
+              const pointGraphic = new Graphic({
+                geometry: point,
+                symbol: simpleMarkerSymbol,
+              });
+
+              graphicsLayer.add(pointGraphic);
             };
           });
         } else {
