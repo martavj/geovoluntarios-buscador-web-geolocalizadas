@@ -18,8 +18,7 @@ require([
   Graphic
 ) {
   esriConfig.apiKey =
-  "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
-
+    "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
 
   //Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
@@ -78,7 +77,7 @@ require([
                   event.result.feature.geometry.longitude,
                   event.result.feature.geometry.latitude,
                 ],
-                zoom: 12,
+                zoom: 16,
               });
 
               const graphicsLayer = new GraphicsLayer();
