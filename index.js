@@ -4,8 +4,11 @@ require([
   "esri/layers/GeoJSONLayer",
   "esri/tasks/Locator",
 ], function (esriConfig, Search, GeoJSONLayer, Locator) {
+  // esriConfig.apiKey =
+  //   "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
+
   esriConfig.apiKey =
-    "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
+    "AAPKe354c005fa8d472e87247458291f36f2PozSnMSRbTdahr63Z7a6Scx6GnwUuPUgxOlnNrId6EUOrMevHbpf6T7PuC9NVZwF";
 
   //Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
@@ -39,10 +42,21 @@ require([
           resultsBoxEl.innerHTML = "";
 
           res.features.forEach((el) => {
+            //List the results
             const listEl = document.createElement("li");
 
             listEl.innerHTML = JSON.stringify(el.attributes);
             resultsBoxEl.appendChild(listEl);
+
+            //Add a button to show the location on the map
+            const buttonShowMap = document.createElement("button");
+
+            buttonShowMap.innerHTML = "Ver Localización";
+            resultsBoxEl.appendChild(buttonShowMap);
+
+            buttonShowMap.onclick = function () {
+              console.log("Show map");
+            };
           });
         } else {
           resultsBoxEl.innerHTML = "<li>No hay resultados</li>";
@@ -55,3 +69,5 @@ require([
       });
   });
 });
+
+//TODO
