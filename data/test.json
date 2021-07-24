@@ -7,7 +7,11 @@
         "name": "Portal 1",
         "url": "http://myportal.com/Portal1",
         "logo": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        "riesgo": "Meteorológico",
+        "ambito": "local",
+        "idioma": "español",
+        "informacion": "prevención"
       },
       "geometry": {
         "type": "Polygon",
@@ -43,7 +47,11 @@
         "name": "Portal 2",
         "url": "http://myportal.com/Portal2",
         "logo": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        "riesgo": "Meteorológico",
+        "ambito": "local",
+        "idioma": "español",
+        "informacion": "prevención"
       },
       "geometry": {
         "type": "Point",
@@ -92,7 +100,11 @@
         "name": "Portal 3",
         "url": "http://myportal.com/Portal3",
         "logo": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        "riesgo": "Meteorológico",
+        "ambito": "local",
+        "idioma": "español",
+        "informacion": "prevención"
       },
       "geometry": {
         "type": "Polygon",
@@ -128,7 +140,11 @@
         "name": "Portal 4",
         "url": "http://myportal.com/Portal4",
         "logo": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        "riesgo": "Meteorológico",
+        "ambito": "local",
+        "idioma": "español",
+        "informacion": "prevención"
       },
       "geometry": {
         "type": "Polygon",
@@ -164,7 +180,11 @@
         "name": "Portal de riesgo de Almería",
         "url": "http://myportal.com/Portal5",
         "logo": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        "riesgo": "Meteorológico",
+        "ambito": "local",
+        "idioma": "español",
+        "informacion": "prevención"
       },
       "geometry": {
         "type": "Polygon",
@@ -200,7 +220,11 @@
         "name": "Portal de andalucia",
         "url": "https://juntadeandalucia.es/",
         "logo": "",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        "riesgo": "Meteorológico",
+        "ambito": "local",
+        "idioma": "español",
+        "informacion": "prevención"
       },
       "geometry": {
         "type": "Polygon",

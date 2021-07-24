@@ -17,3 +17,10 @@ body {
   border-left: 3px solid rgba(255, 255, 255, 0.5);
   height: 28px;
 }
+
+button {
+  background-color: #e7e7e7;
+  border: solid black 1px;
+  padding: 15px 32px;
+  margin-top: 20px;
+}

@@ -17,9 +17,11 @@ require([
   GraphicsLayer,
   Graphic
 ) {
-  esriConfig.apiKey =
-    "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
+  // esriConfig.apiKey =
+  //   "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
 
+  esriConfig.apiKey =
+    "AAPK87580e590af24ff4a112832c43dbb704_CtPugq6Hs7TGTKzl-hgwybVFmduOYi9arnEQy3D2VJdsZz0Qns4n6tlJRIhtAcE";
   //Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
     container: document.getElementById("search-box"),
@@ -62,6 +64,7 @@ require([
             const buttonShowMap = document.createElement("button");
 
             buttonShowMap.innerHTML = "Ver Localización";
+
             resultsBoxEl.appendChild(buttonShowMap);
 
             //When we click on the ver localizacion button, a map is created plotting the location
