@@ -11,16 +11,90 @@
       href="https://js.arcgis.com/4.20/esri/themes/light/main.css"
     />
     <link rel="stylesheet" href="./css/estilo.css" />
-    <!-- <link
-      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link
       rel="stylesheet"
-    /> -->
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
 
     <script src="https://js.arcgis.com/4.20/"></script>
   </head>
   <body>
-    <h1>InfoRiesgo</h1>
-    <div id="search-box"></div>
+    <!-- Header & Nav -->
+    <!--Barra de navegación-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><h3 class="align-left">InfoRiesgo</h3></a
+        >
+
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navLogin"
+        >
+          <span class="navbar-toggle-icon"><i class="fas fa-bars"></i></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Información</a>
+            </li>
+            <div class="vertical-line"></div>
+            <li class="nav-item">
+              <a
+                class="nav-link toggle"
+                id="navbarDropdownMenuLink"
+                href="index.html"
+              >
+                Ayudar
+              </a>
+            </li>
+            <div class="vertical-line"></div>
+            <li class="nav-item">
+              <a
+                class="nav-link toggle"
+                id="navbarDropdownMenuLink"
+                href="index.html"
+              >
+                Quienes somos
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navLogin">
+          <ul class="navbar-nav d-md-none">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Información</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Ayudar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Quienes somos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Panel Jumbotron con la búsqueda-->
+    <header class="jumbotron">
+      <div class="container text-center">
+        <div id="search-box" class="input-group col-md-4"></div>
+      </div>
+    </header>
+
     <ul id="results-box"></ul>
     <div id="map"></div>
     <script src="index.js"></script>
