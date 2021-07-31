@@ -52,19 +52,19 @@ require([
           resultsBoxEl.innerHTML = "";
 
           res.features.forEach((el) => {
-            //List the results
-            const listEl = document.createElement("li");
-
-            listEl.innerHTML = JSON.stringify(el.attributes);
-            resultsBoxEl.appendChild(listEl);
-
             //Add a button to show the location on the map
+            const buttonsDiv = document.getElementById("buttons-box");
             const buttonShowMap = document.createElement("button");
 
-            buttonShowMap.className = "slds-button slds-button_neutral";
+            buttonShowMap.className = "btn btn-outline-dark m-2";
             buttonShowMap.innerHTML = "Ver Localización";
+            buttonsDiv.appendChild(buttonShowMap);
 
-            resultsBoxEl.appendChild(buttonShowMap);
+            //List the results
+            const listEl = document.createElement("li");
+            listEl.innerHTML = JSON.stringify(el.attributes);
+            //listEl.className = "card-body";
+            resultsBoxEl.appendChild(listEl);
 
             //When we click on the ver localizacion button, a map is created plotting the location
             buttonShowMap.onclick = function () {
@@ -108,28 +108,27 @@ require([
               graphicsLayer.add(pointGraphic);
 
               //remove the VerLocalizacion button.
-              resultsBoxEl.removeChild(buttonShowMap);
+              buttonsDiv.removeChild(buttonShowMap);
 
               //Add a button to show change the location on the map
               const buttonChangeLocation = document.createElement("button");
-
-              buttonChangeLocation.className =
-                "slds-button slds-button_neutral";
+              buttonChangeLocation.className = "btn btn-outline-dark m-5";
               buttonChangeLocation.innerHTML = "Cambiar localización";
+              buttonsDiv.appendChild(buttonChangeLocation);
 
-              resultsBoxEl.appendChild(buttonChangeLocation);
+              //TODO Crear función para cambiar la localización
             };
           });
         } else {
-          resultsBoxEl.innerHTML = "<li>No hay resultados</li>";
+          resultsBoxEl.innerHTML =
+            "<div class='alert alert-danger text-center bold' role='alert'> <button type='button' class='close' data-dismiss='alert'>&times;</button>No se han encontrado resultados para la localización elegida.</div>";
         }
       })
       .catch(function (e) {
         resultsBoxEl.innerHTML =
-          "<li>No se ha podido consultar la base de datos, por favor inténtelo más tarde</li>";
+          "<div class='alert alert-danger text-center bold' role='alert'> <button type='button' class='close' data-dismiss='alert'>&times;</button>No se ha podido consultar la base de datos, por favor inténtelo más tarde.</div>";
         console.error("query failed: ", e);
       });
   });
+  //TODO Separar funciones para hacer el código más claro.
 });
-
-//TODO
