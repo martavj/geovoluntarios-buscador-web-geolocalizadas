@@ -30,9 +30,6 @@ require([
     watcher.remove();
   });
 
-  //Use the event select results to get the coordinates
-  //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html#event-select-result
-
   const database = new GeoJSONLayer({
     url: "data/test.json",
     // url: "data/spain-provincias.json",
@@ -115,8 +112,30 @@ require([
               buttonChangeLocation.className = "btn btn-outline-dark m-5";
               buttonChangeLocation.innerHTML = "Cambiar localización";
               buttonsDiv.appendChild(buttonChangeLocation);
-
-              //TODO Crear función para cambiar la localización
+              //If we click on 'Cambiar localización', the text changes giving the instructions: click on the map to change the location.
+              buttonChangeLocation.onclick = function () {
+                graphicsLayer.remove(pointGraphic);
+                buttonChangeLocation.innerHTML =
+                  "Haz click en el mapa para cambiar la localización.";
+                //If we click on the map, we capture the coordinates and do the reserve geocoding.
+                view.on("click", function (event) {
+                  // Get the coordinates of the click on the view
+                  //Create a new point using the new coordinates
+                  const point = {
+                    type: "point",
+                    longitude: event.mapPoint.longitude,
+                    latitude: event.mapPoint.latitude,
+                  };
+                  //Create the graphic for the point
+                  const pointGraphic = new Graphic({
+                    geometry: point,
+                    symbol: simpleMarkerSymbol,
+                  });
+                  //Add new graphic to the map
+                  graphicsLayer.add(pointGraphic);
+                  //TODO Hacer query con la nueva localizacion.
+                });
+              };
             };
           });
         } else {
@@ -130,5 +149,6 @@ require([
         console.error("query failed: ", e);
       });
   });
+
   //TODO Separar funciones para hacer el código más claro.
 });
