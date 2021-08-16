@@ -77,7 +77,44 @@ require([
 
       //List the results
       const listEl = document.createElement("li");
-      listEl.innerHTML = JSON.stringify(el.attributes);
+      console.log(el.attributes);
+      const descripcion = JSON.stringify(el.attributes.descripcion);
+      const nombre = JSON.stringify(el.attributes.name);
+      const ambito = JSON.stringify(el.attributes.ambito);
+      const idioma = JSON.stringify(el.attributes.idioma);
+      const logo = JSON.stringify(el.attributes.logo);
+      const informacion = JSON.stringify(el.attributes.informacion);
+      const riesgo = JSON.stringify(el.attributes.riesgo);
+      const url = JSON.stringify(el.attributes.url);
+
+      //TODO Style the list
+      listEl.innerHTML =
+        "nombre: " +
+        nombre +
+        " " +
+        "<br>" +
+        "descripción: " +
+        descripcion +
+        "<br>" +
+        "logo: " +
+        logo +
+        "<br>" +
+        "ambito: " +
+        ambito +
+        "<br>" +
+        "idioma: " +
+        idioma +
+        "<br>" +
+        "riesgo: " +
+        riesgo +
+        "<br>" +
+        "informacion: " +
+        informacion +
+        "<br>" +
+        "url: " +
+        url;
+
+      //listEl.innerHTML = JSON.stringify(el.attributes);
       //listEl.className = "card-body";
       resultsBoxEl.appendChild(listEl);
 
