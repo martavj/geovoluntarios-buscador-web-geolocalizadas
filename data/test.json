@@ -6,7 +6,7 @@
       "properties": {
         "name": "Portal 1",
         "url": "http://myportal.com/Portal1",
-        "logo": "",
+        "logo": "LOGO",
         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         "riesgo": "Meteorológico",
         "ambito": "local",
@@ -46,7 +46,7 @@
       "properties": {
         "name": "Portal 2",
         "url": "http://myportal.com/Portal2",
-        "logo": "",
+        "logo": "LOGO",
         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         "riesgo": "Meteorológico",
         "ambito": "local",
@@ -99,7 +99,7 @@
       "properties": {
         "name": "Portal 3",
         "url": "http://myportal.com/Portal3",
-        "logo": "",
+        "logo": "LOGO",
         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         "riesgo": "Meteorológico",
         "ambito": "local",
@@ -139,7 +139,7 @@
       "properties": {
         "name": "Portal 4",
         "url": "http://myportal.com/Portal4",
-        "logo": "",
+        "logo": "LOGO",
         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         "riesgo": "Meteorológico",
         "ambito": "local",
@@ -179,7 +179,7 @@
       "properties": {
         "name": "Portal de riesgo de Almería",
         "url": "http://myportal.com/Portal5",
-        "logo": "",
+        "logo": "LOGO",
         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         "riesgo": "Meteorológico",
         "ambito": "local",
@@ -219,7 +219,7 @@
       "properties": {
         "name": "Portal de andalucia",
         "url": "https://juntadeandalucia.es/",
-        "logo": "",
+        "logo": "LOGO",
         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         "riesgo": "Meteorológico",
         "ambito": "local",

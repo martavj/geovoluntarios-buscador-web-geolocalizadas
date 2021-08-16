@@ -32,7 +32,6 @@ require([
 
   const database = new GeoJSONLayer({
     url: "data/test.json",
-    // url: "data/spain-provincias.json",
   });
 
   const resultsBoxEl = document.getElementById("results-box");
@@ -77,6 +76,7 @@ require([
 
       //List the results
       const listEl = document.createElement("li");
+      listEl.className = "card bg-light mb-5";
       console.log(el.attributes);
       const descripcion = JSON.stringify(el.attributes.descripcion);
       const nombre = JSON.stringify(el.attributes.name);
@@ -89,30 +89,40 @@ require([
 
       //TODO Style the list
       listEl.innerHTML =
-        "nombre: " +
-        nombre +
-        " " +
-        "<br>" +
-        "descripción: " +
-        descripcion +
-        "<br>" +
-        "logo: " +
+        "<div class='card-body'><h4 class='card-title'>" +
         logo +
+        nombre +
+        "</h4>" +
         "<br>" +
-        "ambito: " +
-        ambito +
-        "<br>" +
-        "idioma: " +
-        idioma +
-        "<br>" +
-        "riesgo: " +
-        riesgo +
-        "<br>" +
-        "informacion: " +
+        descripcion +
+        "<br><br>" +
+        "Web: " +
+        "<a href='" +
+        url +
+        "'" +
+        " >" +
+        url +
+        "</a><br><br>" +
+        "Tipo de información: " +
+        "<p class='badge badge-warning'> " +
         informacion +
+        "</p>" +
         "<br>" +
-        "url: " +
-        url;
+        "Riesgo: " +
+        "<p class='badge badge-danger'> " +
+        riesgo +
+        "</p>" +
+        "<br>" +
+        "Idioma: " +
+        "<p class='badge badge-secondary'> " +
+        idioma +
+        "</p>" +
+        "<br>" +
+        "Ámbito: " +
+        "<p class='badge badge-info'> " +
+        ambito +
+        "</p>" +
+        "</div></div>";
 
       //listEl.innerHTML = JSON.stringify(el.attributes);
       //listEl.className = "card-body";
