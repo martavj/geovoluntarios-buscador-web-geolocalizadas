@@ -45,99 +45,13 @@ require([
         outFields: ["*"],
       })
       .then((res) => {
+        resultsBoxEl.innerHTML = "";
+
+        const locationLatitude = event.result.feature.geometry.latitude;
+        const locationLongitude = event.result.feature.geometry.longitude;
+
         if (res.features.length > 0) {
-          resultsBoxEl.innerHTML = "";
-
-          res.features.forEach((el) => {
-            //Add a button to show the location on the map
-            const buttonsDiv = document.getElementById("buttons-box");
-            const buttonShowMap = document.createElement("button");
-
-            buttonShowMap.className = "btn btn-outline-dark m-2";
-            buttonShowMap.innerHTML = "Ver Localización";
-            buttonsDiv.appendChild(buttonShowMap);
-
-            //List the results
-            const listEl = document.createElement("li");
-            listEl.innerHTML = JSON.stringify(el.attributes);
-            //listEl.className = "card-body";
-            resultsBoxEl.appendChild(listEl);
-
-            //When we click on the ver localizacion button, a map is created plotting the location
-            buttonShowMap.onclick = function () {
-              const map = new Map({
-                basemap: "arcgis-navigation",
-              });
-
-              const view = new MapView({
-                map: map,
-                container: "map",
-                center: [
-                  event.result.feature.geometry.longitude,
-                  event.result.feature.geometry.latitude,
-                ],
-                zoom: 16,
-              });
-
-              const graphicsLayer = new GraphicsLayer();
-              map.add(graphicsLayer);
-
-              const point = {
-                type: "point",
-                longitude: event.result.feature.geometry.longitude,
-                latitude: event.result.feature.geometry.latitude,
-              };
-
-              const simpleMarkerSymbol = {
-                type: "simple-marker",
-                color: [226, 119, 40],
-                outline: {
-                  color: [255, 255, 255],
-                  width: 1,
-                },
-              };
-
-              const pointGraphic = new Graphic({
-                geometry: point,
-                symbol: simpleMarkerSymbol,
-              });
-
-              graphicsLayer.add(pointGraphic);
-
-              //remove the VerLocalizacion button.
-              buttonsDiv.removeChild(buttonShowMap);
-
-              //Add a button to show change the location on the map
-              const buttonChangeLocation = document.createElement("button");
-              buttonChangeLocation.className = "btn btn-outline-dark m-5";
-              buttonChangeLocation.innerHTML = "Cambiar localización";
-              buttonsDiv.appendChild(buttonChangeLocation);
-              //If we click on 'Cambiar localización', the text changes giving the instructions: click on the map to change the location.
-              buttonChangeLocation.onclick = function () {
-                graphicsLayer.remove(pointGraphic);
-                buttonChangeLocation.innerHTML =
-                  "Haz click en el mapa para cambiar la localización.";
-                //If we click on the map, we capture the coordinates and do the reserve geocoding.
-                view.on("click", function (event) {
-                  // Get the coordinates of the click on the view
-                  //Create a new point using the new coordinates
-                  const point = {
-                    type: "point",
-                    longitude: event.mapPoint.longitude,
-                    latitude: event.mapPoint.latitude,
-                  };
-                  //Create the graphic for the point
-                  const pointGraphic = new Graphic({
-                    geometry: point,
-                    symbol: simpleMarkerSymbol,
-                  });
-                  //Add new graphic to the map
-                  graphicsLayer.add(pointGraphic);
-                  //TODO Hacer query con la nueva localizacion.
-                });
-              };
-            };
-          });
+          getList(res, locationLatitude, locationLongitude);
         } else {
           resultsBoxEl.innerHTML =
             "<div class='alert alert-danger text-center bold' role='alert'> <button type='button' class='close' data-dismiss='alert'>&times;</button>No se han encontrado resultados para la localización elegida.</div>";
@@ -150,5 +64,121 @@ require([
       });
   });
 
-  //TODO Separar funciones para hacer el código más claro.
+  getList = (res, locationLongitude, locationLatitude) => {
+    console.log("Getting list...");
+    res.features.forEach((el) => {
+      //Add a button to show the location on the map
+      const buttonsDiv = document.getElementById("buttons-box");
+      const buttonShowMap = document.createElement("button");
+
+      buttonShowMap.className = "btn btn-outline-dark m-2";
+      buttonShowMap.innerHTML = "Ver Localización";
+      buttonsDiv.appendChild(buttonShowMap);
+
+      //List the results
+      const listEl = document.createElement("li");
+      listEl.innerHTML = JSON.stringify(el.attributes);
+      //listEl.className = "card-body";
+      resultsBoxEl.appendChild(listEl);
+
+      //When we click on the ver localizacion button, a map is created plotting the location
+      buttonShowMap.onclick = function () {
+        showMap(locationLongitude, locationLatitude, buttonsDiv, buttonShowMap);
+      };
+    });
+  };
+
+  showMap = (
+    locationLongitude,
+    locationLatitude,
+    buttonsDiv,
+    buttonShowMap
+  ) => {
+    console.log("ShowMap");
+    const map = new Map({
+      basemap: "arcgis-navigation",
+    });
+
+    const view = new MapView({
+      map: map,
+      container: "map",
+      center: [locationLongitude, locationLatitude],
+      zoom: 16,
+    });
+
+    const graphicsLayer = new GraphicsLayer();
+    map.add(graphicsLayer);
+
+    const point = {
+      type: "point",
+      longitude: locationLongitude,
+      latitude: locationLatitude,
+    };
+
+    const simpleMarkerSymbol = {
+      type: "simple-marker",
+      color: [226, 119, 40],
+      outline: {
+        color: [255, 255, 255],
+        width: 1,
+      },
+    };
+
+    const pointGraphic = new Graphic({
+      geometry: point,
+      symbol: simpleMarkerSymbol,
+    });
+
+    graphicsLayer.add(pointGraphic);
+
+    //remove the VerLocalizacion button.
+    buttonsDiv.removeChild(buttonShowMap);
+
+    //Add a button to show change the location on the map
+    const buttonChangeLocation = document.createElement("button");
+    buttonChangeLocation.className = "btn btn-outline-dark m-5";
+    buttonChangeLocation.innerHTML = "Cambiar localización";
+    buttonsDiv.appendChild(buttonChangeLocation);
+    //If we click on 'Cambiar localización', the text changes giving the instructions: click on the map to change the location.
+    buttonChangeLocation.onclick = function () {
+      changeLocation(
+        graphicsLayer,
+        pointGraphic,
+        buttonChangeLocation,
+        view,
+        simpleMarkerSymbol
+      );
+    };
+  };
+
+  changeLocation = (
+    graphicsLayer,
+    pointGraphic,
+    buttonChangeLocation,
+    view,
+    simpleMarkerSymbol
+  ) => {
+    console.log("ChangeLocation");
+    graphicsLayer.remove(pointGraphic);
+    buttonChangeLocation.innerHTML =
+      "Haz click en el mapa para cambiar la localización.";
+    //If we click on the map, we capture the coordinates and do the reserve geocoding.
+    view.on("click", function (event) {
+      // Get the coordinates of the click on the view
+      //Create a new point using the new coordinates
+      const point = {
+        type: "point",
+        longitude: event.mapPoint.longitude,
+        latitude: event.mapPoint.latitude,
+      };
+      //Create the graphic for the point
+      const pointGraphic = new Graphic({
+        geometry: point,
+        symbol: simpleMarkerSymbol,
+      });
+      //Add new graphic to the map
+      graphicsLayer.add(pointGraphic);
+      //TODO Hacer query con la nueva localizacion.
+    });
+  };
 });
