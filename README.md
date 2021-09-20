@@ -10,15 +10,17 @@ Use cases:
 
 ## Requirements
 
-This is a client-side application, so nothing but a web server need to be installed (Apache, Nginx, IIS, https-server, live server, ...).
+This is a client-side application and you will need:
+
+- A web server need to be installed (Apache, Nginx, IIS, https-server, live server, ...).
+- A free ArcGIS Developer account ([Sign-up](https://developers.arcgis.com/sign-up) - [how-to video](https://www.youtube.com/watch?v=bhPmRr7OH8k))
+- Create an API key ([how-to video](https://www.youtube.com/watch?v=Q1x4NZPK8Ws&t=8s) - [docs](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys/))
 
 ## Development setup
 
-You just need to clone this repo:
-
-`$git clone git@github.com:GeoVoluntarios/geovoluntarios-buscador-web-geolocalizadas.git`
-
-And open the index.html file from your web server.
+1. Clone this repo: `$git clone git@github.com:GeoVoluntarios/geovoluntarios-buscador-web-geolocalizadas.git`
+2. Create a `config.js` file using the [config_template.js](./config_template.js) and replace the placeholder with a valid API key.
+3. Open the `index.html` file from your web server.
 
 ## Contributing
 

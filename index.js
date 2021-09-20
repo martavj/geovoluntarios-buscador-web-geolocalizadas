@@ -2,12 +2,10 @@ require([
   "esri/config",
   "esri/widgets/Search",
   "esri/layers/GeoJSONLayer",
-  "esri/tasks/Locator",
-], function (esriConfig, Search, GeoJSONLayer, Locator) {
-  esriConfig.apiKey =
-    "AAPKa5449aa4a0d744d9b96fc88d66315135gkeU8rbnhTg-U5B43hD8zxCCHXy87VQpKCjGTJeGLAC6v5aP8GPYc-BXc1YOdDsI";
+], function (esriConfig, Search, GeoJSONLayer) {
+  esriConfig.apiKey = apiKey;
 
-  //Search widget which includes the locator. We will get the location from the results.
+  // Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
     container: document.getElementById("search-box"),
   });
@@ -17,12 +15,11 @@ require([
     watcher.remove();
   });
 
-  //Use the event select results to get the coordinates
-  //https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html#event-select-result
+  // Use the event select results to get the coordinates
+  // https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html#event-select-result
 
   const database = new GeoJSONLayer({
     url: "data/test.json",
-    // url: "data/spain-provincias.json",
   });
 
   const resultsBoxEl = document.getElementById("results-box");
