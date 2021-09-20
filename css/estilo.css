@@ -1,4 +1,11 @@
-#mapDiv{
+body {
+  background-color: #e6e6e6;
+  text-align: center;
+}
+#search-box {
+  margin: 0 auto;
+}
+/* #mapDiv{
 
   height:500px;
   width:100%;
@@ -8,4 +15,4 @@
   margin-top: 8px;
   border-left: 3px solid rgba(255,255,255,.5);
   height: 28px;
-}
+} */

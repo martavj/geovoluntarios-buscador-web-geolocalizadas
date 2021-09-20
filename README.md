@@ -1,22 +1,32 @@
 # geovoluntarios-buscador-web-geolocalizadas
 
-This web application to allow anyone to provide a search experience of geolocated elements. It could be phisical elements, websites focus on an specific area, etc. For example, imagine a portal which goal is to allow users to find information about which websites can provide information or services about an specific hazard like a fire, flood or an earthquake near to you.
+This web application allow anyone to provide a search experience of geolocated elements. It could be phisical elements, websites focus on an specific area, etc.
+
+Use cases:
+
+- Portal which goal is to allow users to find information about which websites can provide information or services about an specific hazard like a fire, flood or an earthquake near to you.
+- Website to allow users to identify Open Data portals containing data from an specific location.
+- etc.
 
 ## Requirements
 
-This is a serverless application, so you would only need:
+This is a client-side application and you will need:
 
-* The IDE of your preference
-* A local web server to develop (Apache, Nginx, IIS, https-server, live server, ...)
+- A web server need to be installed (Apache, Nginx, IIS, https-server, live server, ...).
+- A free ArcGIS Developer account ([Sign-up](https://developers.arcgis.com/sign-up) - [how-to video](https://www.youtube.com/watch?v=bhPmRr7OH8k))
+- Create an API key ([how-to video](https://www.youtube.com/watch?v=Q1x4NZPK8Ws&t=8s) - [docs](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys/))
 
 ## Development setup
 
-You just need to clone this repo: `git clone git@github.com:GeoVoluntarios/geovoluntarios-buscador-web-geolocalizadas.git`
-
-And then open the index.html file.
+1. Clone this repo: `$git clone git@github.com:GeoVoluntarios/geovoluntarios-buscador-web-geolocalizadas.git`
+2. Create a `config.js` file using the [config_template.js](./config_template.js) and replace the placeholder with a valid API key.
+3. Open the `index.html` file from your web server.
 
 ## Contributing
 
+👍🎉 First off, thanks for taking the time to contribute! 🎉👍
+
+Please check the [issues](https://github.com/GeoVoluntarios/geovoluntarios-buscador-web-geolocalizadas/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) to find a task that you feel like doing and that you think you can contribute to.
 
 ## Mockups
 
