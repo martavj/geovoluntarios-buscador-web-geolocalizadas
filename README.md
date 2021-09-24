@@ -1,5 +1,7 @@
 # GeoSearch
 
+<img src="geosearch.png" align="right" width="100">
+
 This web application allow anyone to provide a search experience of geolocated elements. It could be phisical elements, websites focus on an specific area, etc.
 
 Use cases:
