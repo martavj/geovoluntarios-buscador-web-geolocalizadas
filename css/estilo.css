@@ -1,10 +1,11 @@
 body {
   background-color: #e6e6e6;
-  text-align: center;
 }
-#search-box {
-  margin: 0 auto;
+
+.listEl {
+  border: 1px solid black;
 }
+
 /* #mapDiv{
 
   height:500px;

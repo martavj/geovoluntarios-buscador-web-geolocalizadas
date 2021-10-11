@@ -14,13 +14,45 @@
       href="https://js.arcgis.com/4.20/esri/themes/light/main.css"
     />
     <link rel="stylesheet" href="./css/estilo.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
     <script src="https://js.arcgis.com/4.20/"></script>
   </head>
+
   <body>
-    <h1>InfoRiesgo</h1>
-    <div id="search-box"></div>
-    <ul id="results-box"></ul>
+    <div class="container mx-auto">
+      <div class="max-w-4xl h-screen flex flex-col justify-center items-center mx-auto">
+        <h1 class="text-5xl mb-10">InfoRiesgo</h1>
+        <div class="w-full mb-10" id="search-box"></div>
+        <div class="w-full grid sm:grid-cols-2 text-center mb-10">
+          <div class="mb-2 sm:mb-0">
+            <label class="mr-5" for="riesgos">Riesgos</label>
+            <select class="p-1" name="riesgos" id="riesgos">
+              <option value="todos">Todos</option>
+              <option value="incendios">Natural - Incendios</option>
+              <option value="sismicos">Natural - Sísmicos</option>
+              <option value="meteorologico">Natural - Meteorológico</option>
+              <option value="quimicos">Químicos</option>
+              <option value="seguridad">Seguridad ciudadana</option>
+              <option value="nuclear">Nuclear</option>
+            </select>
+          </div>
+          <div>
+            <label class="mr-5" for="informacion">Información</label>
+            <select class="p-1" name="informacion" id="informacion">
+              <option value="toda">Toda</option>
+              <option value="historias">Historias reales</option>
+              <option value="prevencion">Prevención</option>
+              <option value="reaccion">Reacción</option>
+            </select>
+          </div>
+        </div>
+        <div class="w-full" id="results-box"></div>
+    </div>
+
     <script src="config.js"></script>
     <script src="index.js"></script>
   </body>
