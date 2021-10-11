@@ -36,6 +36,10 @@ require([
           resultsBoxEl.innerHTML = "";
 
           res.features.forEach((el) => {
+            const searchPanel = document.getElementById("search-panel");
+            searchPanel.classList.remove("h-screen");
+            searchPanel.classList.add("mt-10");
+
             const listEl = document.createElement("div");
             listEl.className = "listEl sm:flex p-2 my-5";
             const noLogo = "geosearch.png";
