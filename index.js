@@ -1,118 +1,54 @@
 require([
   "esri/config",
-  "esri/Map",
-  "esri/views/MapView",
-  "esri/widgets/Locate",
-  "esri/widgets/BasemapToggle",
-  "esri/layers/FeatureLayer",
   "esri/widgets/Search",
-  "esri/layers/GraphicsLayer",
   "esri/layers/GeoJSONLayer",
-  "esri/Graphic",
-], function (
-  esriConfig,
-  Map,
-  MapView,
-  Locate,
-  BasemapToggle,
-  FeatureLayer,
-  Search,
-  GraphicsLayer,
-  GeoJSONLayer,
-  Graphic
-) {
-  esriConfig.apiKey =
-    "AAPK2ca6b7846e0841c8bcba6dd9cf360db76sr1bqGdjj7ZVHDmq4NhYQke3_PojP3lBlybETdhqNgGAfpz65XQA6YxpnfKGaVr";
+], function (esriConfig, Search, GeoJSONLayer) {
+  esriConfig.apiKey = apiKey;
 
-  const map = new Map({
-    basemap: "arcgis-navigation",
-    // basemap: "arcgis-topographic", // Basemap layer service
-  });
-
-  const view = new MapView({
-    map: map,
-    center: [-3.600833, 37.178055], // Longitude, latitude
-    zoom: 13, // Zoom level
-    container: "mapDiv", // Div element
-  });
-
-  console.log(view.locate);
-  console.log(view.center.latitude);
-  console.log(view.center.longitude);
-
-  const locationLatitude = null;
-  const locationLongitude = null;
-
-  const locate = new Locate({
-    view: view,
-    useHeadingEnabled: false,
-    goToOverride: function (view, options) {
-      options.target.scale = 1500;
-      console.log(options.target);
-      return view.goTo(options.target);
-    },
-  });
-
-  view.ui.add(locate, "top-left");
-
-  const basemapToggle = new BasemapToggle({
-    view: view,
-    basemap: "arcgis-imagery",
-  });
-
-  view.ui.add(basemapToggle, "bottom-right");
-
+  // Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
-    //Add Search widget
-    view: view,
+    container: document.getElementById("search-box"),
   });
 
-  view.ui.add(search, "top-right");
+  const watcher = search.watch("activeSource", (source) => {
+    source.placeholder = "Introduce tu dirección";
+    watcher.remove();
+  });
 
-  // const graphicsLayer = new GraphicsLayer();
-  // map.add(graphicsLayer);
+  // Use the event select results to get the coordinates
+  // https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html#event-select-result
 
-  // const point = {
-  //   type: "point",
-  //   longitude: view.center.longitude,
-  //   latitude: view.center.latitude,
-  // };
-
-  // const simpleMarkerSymbol = {
-  //   type: "simple-marker",
-  //   color: [226, 119, 40],
-  //   outline: {
-  //     color: [255, 255, 255],
-  //     width: 1,
-  //   },
-  // };
-
-  // const pointGraphic = new Graphic({
-  //   geometry: point,
-  //   symbol: simpleMarkerSymbol,
-  // });
-
-  // graphicsLayer.add(pointGraphic);
-
-  const geoJSONLayer = new GeoJSONLayer({
+  const database = new GeoJSONLayer({
     url: "data/test.json",
   });
-  geoJSONLayer.when((l) => {
-    debugger;
-    geoJSONLayer // queries all features in the layer
-      .queryFeatures((f) => {
-        debugger;
-      }); // queries features and returns a FeatureSet
-    // .queryExtent() // queries features returns extent of features that satisfy query
-    // .queryFeatureCount() // queries features and returns count of features
-    // .queryObjectIds(); // queries features and returns objectIds array of features
-  });
 
-  /*
-    1. Cargar geojson (queryFeatures o fetch?)
-    2. Mostrar caja de búsqueda
-      2.1 Cuando se obtenga localización (location / extent)
-      2.2 Intersect ubicación usando GeometryEngine.inserct(geometriasGeoJSON, localizacion)
-      2.3 Devolver <ul> con los resultado
-  */
+  const resultsBoxEl = document.getElementById("results-box");
+
+  search.on("select-result", function (event) {
+    database
+      .queryFeatures({
+        geometry: event.result.feature.geometry,
+        spatialRelationship: "intersects",
+        outFields: ["*"],
+      })
+      .then((res) => {
+        if (res.features.length > 0) {
+          resultsBoxEl.innerHTML = "";
+
+          res.features.forEach((el) => {
+            const listEl = document.createElement("li");
+
+            listEl.innerHTML = JSON.stringify(el.attributes);
+            resultsBoxEl.appendChild(listEl);
+          });
+        } else {
+          resultsBoxEl.innerHTML = "<li>No hay resultados</li>";
+        }
+      })
+      .catch(function (e) {
+        resultsBoxEl.innerHTML =
+          "<li>No se ha podido consultar la base de datos, por favor inténtelo más tarde</li>";
+        console.error("query failed: ", e);
+      });
+  });
 });

@@ -3,7 +3,10 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal 1",
+        "url": "http://myportal.com/Portal1"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -19,7 +22,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal 2",
+        "url": "http://myportal.com/Portal2"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [-3.679609559476375, 36.73392412787112]
@@ -51,7 +57,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal 3",
+        "url": "http://myportal.com/Portal3"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -67,7 +76,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal 4",
+        "url": "http://myportal.com/Portal4"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -83,7 +95,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Portal de riesgo de Almería",
+        "url": "http://myportal.com/Portal5"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -93,6 +108,25 @@
             [-2.1368408203125, 36.94111143010769],
             [-2.8179931640624996, 36.94111143010769],
             [-2.8179931640624996, 36.62434536776987]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Portal de andalucia",
+        "url": "https://juntadeandalucia.es/"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-8.360595703125, 36.10237644873644],
+            [-0.560302734375, 36.10237644873644],
+            [-0.560302734375, 39.35978526869001],
+            [-8.360595703125, 39.35978526869001],
+            [-8.360595703125, 36.10237644873644]
           ]
         ]
       }
