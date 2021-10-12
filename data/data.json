@@ -7,11 +7,33 @@
         "name": "Portal 1",
         "url": "http://myportal.com/Portal1",
         "logo": "LOGO",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        "hazardType": "Meteorológico",
-        "ambito": "local",
-        "idioma": "español",
-        "informacion": "prevención"
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -59,12 +81,21 @@
           "local",
           "national"
         ],
-        "idioma": "español",
+        "languages": [
+          "spanish",
+          "english"
+        ],
         "infoCategory": [
           "True stories",
           "Prevention",
           "Reaction",
           "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
         ]
       },
       "geometry": {
@@ -114,11 +145,33 @@
         "name": "Portal 3",
         "url": "http://myportal.com/Portal3",
         "logo": "LOGO",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        "hazardType": "Meteorológico",
-        "ambito": "local",
-        "idioma": "español",
-        "informacion": "prevención"
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -154,11 +207,33 @@
         "name": "Portal 4",
         "url": "http://myportal.com/Portal4",
         "logo": "LOGO",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        "hazardType": "Meteorológico",
-        "ambito": "local",
-        "idioma": "español",
-        "informacion": "prevención"
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -194,11 +269,33 @@
         "name": "Portal de hazardType de Almería",
         "url": "http://myportal.com/Portal5",
         "logo": "LOGO",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        "hazardType": "Meteorológico",
-        "ambito": "local",
-        "idioma": "español",
-        "informacion": "prevención"
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -234,11 +331,33 @@
         "name": "Portal de andalucia",
         "url": "https://juntadeandalucia.es/",
         "logo": "LOGO",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        "hazardType": "Meteorológico",
-        "ambito": "local",
-        "idioma": "español",
-        "informacion": "prevención"
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
       },
       "geometry": {
         "type": "Polygon",
