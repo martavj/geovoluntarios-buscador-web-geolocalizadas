@@ -19,7 +19,7 @@ require([
   // https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html#event-select-result
 
   const database = new GeoJSONLayer({
-    url: "data/test.json",
+    url: "data/data.json",
   });
 
   const resultsBoxEl = document.getElementById("results-box");
