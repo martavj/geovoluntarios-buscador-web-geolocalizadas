@@ -36,18 +36,54 @@ require([
           resultsBoxEl.innerHTML = "";
 
           res.features.forEach((el) => {
-            const listEl = document.createElement("li");
+            const searchPanel = document.getElementById("search-panel");
+            searchPanel.classList.remove("h-screen");
+            searchPanel.classList.add("mt-10");
 
-            listEl.innerHTML = JSON.stringify(el.attributes);
+            const listEl = document.createElement("div");
+            listEl.className = "listEl sm:flex p-2 my-5";
+            const noLogo = "geosearch.png";
+
+            listEl.innerHTML = `
+              <div class="w-32 p-4">
+                <img src=${
+                  el.attributes.logo ? el.attributes.logo : noLogo
+                }></img>
+              </div>
+              <div class="ml-5">
+                <h1 class="name">${el.attributes.name}</h1>
+                <ul class="features">
+                  <li><strong>Riesgo: </strong>${
+                    el.attributes.riesgo ? el.attributes.riesgo : ""
+                  }</li>
+                  <li><strong>Información: </strong>${
+                    el.attributes.info ? el.attributes.info : ""
+                  }</li>
+                  <li><strong>Ámbito territorial: </strong>${
+                    el.attributes.territorio ? el.attributes.territorio : ""
+                  }</li>
+                  <li><strong>Idiomas: </strong>${
+                    el.attributes.idiomas ? el.attributes.idiomas : ""
+                  }</li>
+                  <li><strong>Descripción: </strong>${
+                    el.attributes.descripcion ? el.attributes.descripcion : ""
+                  }</li>
+                </ul>
+                <a class="url" href="${el.attributes.url}" target="_blank">${
+              el.attributes.url
+            }</a>
+              </div>
+            `;
+
             resultsBoxEl.appendChild(listEl);
           });
         } else {
-          resultsBoxEl.innerHTML = "<li>No hay resultados</li>";
+          resultsBoxEl.innerHTML = "<p>No hay resultados</p>";
         }
       })
       .catch(function (e) {
         resultsBoxEl.innerHTML =
-          "<li>No se ha podido consultar la base de datos, por favor inténtelo más tarde</li>";
+          "<p>No se ha podido consultar la base de datos, por favor inténtelo más tarde</p>";
         console.error("query failed: ", e);
       });
   });
