@@ -1,0 +1,391 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Portal 1",
+        "url": "http://myportal.com/Portal1",
+        "logo": "LOGO",
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.679609,
+              36.733922
+            ],
+            [
+              -3.679609,
+              36.701392
+            ],
+            [
+              -3.641753,
+              36.701392
+            ],
+            [
+              -3.641753,
+              36.733922
+            ],
+            [
+              -3.679609,
+              36.733922
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Portal 2",
+        "url": "http://myportal.com/Portal2",
+        "logo": "LOGO",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.679609559476375,
+          36.73392412787112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6795991659164424,
+          36.73392359047603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6795995011925693,
+          36.733916335641815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6796092242002487,
+          36.73391794782725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Portal 3",
+        "url": "http://myportal.com/Portal3",
+        "logo": "LOGO",
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -5.614013671875,
+              38.20365531807149
+            ],
+            [
+              -4.757080078125,
+              38.20365531807149
+            ],
+            [
+              -4.757080078125,
+              39.155622393423215
+            ],
+            [
+              -5.614013671875,
+              39.155622393423215
+            ],
+            [
+              -5.614013671875,
+              38.20365531807149
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Portal 4",
+        "url": "http://myportal.com/Portal4",
+        "logo": "LOGO",
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.340087890625,
+              39.20671884491848
+            ],
+            [
+              -5.03173828125,
+              37.90953361677018
+            ],
+            [
+              -2.581787109375,
+              37.76202988573211
+            ],
+            [
+              -1.988525390625,
+              39.12153746241925
+            ],
+            [
+              -2.340087890625,
+              39.20671884491848
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Portal de hazardType de Almería",
+        "url": "http://myportal.com/Portal5",
+        "logo": "LOGO",
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.8179931640624996,
+              36.62434536776987
+            ],
+            [
+              -2.1368408203125,
+              36.62434536776987
+            ],
+            [
+              -2.1368408203125,
+              36.94111143010769
+            ],
+            [
+              -2.8179931640624996,
+              36.94111143010769
+            ],
+            [
+              -2.8179931640624996,
+              36.62434536776987
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Portal de andalucia",
+        "url": "https://juntadeandalucia.es/",
+        "logo": "LOGO",
+        "hazardType": [
+          "Natural - Fire hazard",
+          "Natural - Seismic risk",
+          "Natural - Weather risk",
+          "Chemical hazard",
+          "Nuclear hazard"
+        ],
+        "territorialScope": [
+          "local",
+          "national"
+        ],
+        "languages": [
+          "spanish",
+          "english"
+        ],
+        "infoCategory": [
+          "True stories",
+          "Prevention",
+          "Reaction",
+          "Information"
+        ],
+        "contentType": [
+          "Plan",
+          "Map",
+          "Organisation",
+          "Report"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.360595703125,
+              36.10237644873644
+            ],
+            [
+              -0.560302734375,
+              36.10237644873644
+            ],
+            [
+              -0.560302734375,
+              39.35978526869001
+            ],
+            [
+              -8.360595703125,
+              39.35978526869001
+            ],
+            [
+              -8.360595703125,
+              36.10237644873644
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
