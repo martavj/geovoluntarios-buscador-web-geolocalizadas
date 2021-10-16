@@ -6,14 +6,12 @@ body {
   border: 1px solid black;
 }
 
-/* #mapDiv{
-
-  height:500px;
-  width:100%;
+#map {
+  height: 400px;
+  width: 1000px;
+  padding-bottom: 20px;
 }
 
-.vertical-line {
-  margin-top: 8px;
-  border-left: 3px solid rgba(255,255,255,.5);
-  height: 28px;
-} */
+#map-button-container {
+  display: flex;
+}
