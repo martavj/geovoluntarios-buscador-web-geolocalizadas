@@ -15,3 +15,7 @@ body {
 #map-button-container {
   display: flex;
 }
+
+button {
+  outline: solid 1px black;
+}

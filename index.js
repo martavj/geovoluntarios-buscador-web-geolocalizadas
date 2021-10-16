@@ -15,8 +15,9 @@ require([
   GraphicsLayer,
   Graphic
 ) {
-  esriConfig.apiKey = apiKey;
-
+  //esriConfig.apiKey = apiKey;
+  esriConfig.apiKey =
+    "AAPK87580e590af24ff4a112832c43dbb704_CtPugq6Hs7TGTKzl-hgwybVFmduOYi9arnEQy3D2VJdsZz0Qns4n6tlJRIhtAcE";
   // Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
     container: document.getElementById("search-box"),
@@ -149,5 +150,56 @@ require([
       symbol: simpleMarkerSymbol,
     });
     graphicsLayer.add(pointGraphic);
+    const buttonsDiv = document.getElementById("buttons-box");
+    //Add a button to show change the location on the map
+    const buttonChangeLocation = document.createElement("button");
+    buttonChangeLocation.innerHTML = "Cambiar localización";
+    buttonsDiv.appendChild(buttonChangeLocation);
+    //If we click on 'Cambiar localización', the text changes giving the instructions: click on the map to change the location.
+    buttonChangeLocation.onclick = function () {
+      changeLocation(
+        graphicsLayer,
+        pointGraphic,
+        buttonChangeLocation,
+        view,
+        simpleMarkerSymbol
+      );
+    };
+  };
+
+  changeLocation = (
+    graphicsLayer,
+    pointGraphic,
+    buttonChangeLocation,
+    view,
+    simpleMarkerSymbol
+  ) => {
+    console.log("ChangeLocation");
+    graphicsLayer.remove(pointGraphic);
+    buttonChangeLocation.innerHTML =
+      "Haz click en el mapa para cambiar la localización.";
+    //If we click on the map, we capture the coordinates and do the reserve geocoding.
+    view.on("click", function (event) {
+      // Get the coordinates of the click on the view
+      //Create a new point using the new coordinates
+      const point = {
+        type: "point",
+        longitude: event.mapPoint.longitude,
+        latitude: event.mapPoint.latitude,
+      };
+
+      const newLocationLongitude = event.mapPoint.longitude;
+      const newLocationLatitude = event.mapPoint.latitude;
+      //Create the graphic for the point
+      const pointGraphic = new Graphic({
+        geometry: point,
+        symbol: simpleMarkerSymbol,
+      });
+      //Add new graphic to the map
+      graphicsLayer.add(pointGraphic);
+      buttonChangeLocation.innerHTML = "Cambiar localización";
+      view.goTo({ center: [newLocationLongitude, newLocationLatitude] });
+      view.zoom = 16;
+    });
   };
 });
