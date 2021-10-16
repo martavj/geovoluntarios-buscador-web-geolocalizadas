@@ -15,9 +15,7 @@ require([
   GraphicsLayer,
   Graphic
 ) {
-  //esriConfig.apiKey = apiKey;
-  esriConfig.apiKey =
-    "AAPK87580e590af24ff4a112832c43dbb704_CtPugq6Hs7TGTKzl-hgwybVFmduOYi9arnEQy3D2VJdsZz0Qns4n6tlJRIhtAcE";
+  esriConfig.apiKey = apiKey;
 
   // Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
@@ -109,11 +107,14 @@ require([
     });
   };
 
+  //Add Map using the result of the search
   showMap = (locationLongitude, locationLatitude) => {
+    //Create map
     const map = new Map({
       basemap: "arcgis-navigation",
     });
 
+    //Create view in the map div centered on the latitude and longitude from the search
     const view = new MapView({
       map: map,
       container: "map",
@@ -121,15 +122,18 @@ require([
       zoom: 16,
     });
 
+    //Create a new graphics layer and add it to the map
     const graphicsLayer = new GraphicsLayer();
     map.add(graphicsLayer);
 
+    //Create a point using the latitude and longitude from the search
     const point = {
       type: "point",
       longitude: locationLongitude,
       latitude: locationLatitude,
     };
 
+    //Create a simple marker style
     const simpleMarkerSymbol = {
       type: "simple-marker",
       color: [226, 119, 40],
@@ -139,11 +143,11 @@ require([
       },
     };
 
+    //Create a pointGraphic for the point with the created style and add it to the graphic layer
     const pointGraphic = new Graphic({
       geometry: point,
       symbol: simpleMarkerSymbol,
     });
-
     graphicsLayer.add(pointGraphic);
   };
 });
