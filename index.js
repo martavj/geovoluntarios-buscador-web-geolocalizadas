@@ -17,7 +17,7 @@ require([
 ) {
   //esriConfig.apiKey = apiKey;
   esriConfig.apiKey =
-    "AAPK87580e590af24ff4a112832c43dbb704_CtPugq6Hs7TGTKzl-hgwybVFmduOYi9arnEQy3D2VJdsZz0Qns4n6tlJRIhtAcE";
+apiKey;
   // Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
     container: document.getElementById("search-box"),
