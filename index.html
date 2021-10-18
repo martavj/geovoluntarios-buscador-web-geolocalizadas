@@ -24,16 +24,14 @@
 
   <body>
     <div class="container mx-auto">
-      <div id="search-panel" class="max-w-4xl h-screen flex flex-col justify-center items-center mx-auto">
+
+      <!-- Search panel-->
+      <header id="search-panel" class="max-w-4xl h-screen flex flex-col justify-center items-center mx-auto">
         <h1 class="text-5xl mb-10">InfoRiesgo</h1>
         <div class="w-full mb-10" id="search-box"></div>
-        <!-- Buttons and map section-->
-      <section id="map-button-container">
-        <ul id="buttons-box"></ul>
-        <div id="map"></div>
-      </section>
-        <div class="w-full grid sm:grid-cols-2 text-center mb-10">
-          <div class="mb-2 sm:mb-0">
+        <!-- Filters -->
+        <section id=#filters class="w-full grid sm:grid-cols-2 text-center mb-10">
+          <div>
             <label class="mr-5" for="riesgos">Riesgos</label>
             <select class="p-1" name="riesgos" id="riesgos">
               <option value="todos">Todos</option>
@@ -54,10 +52,20 @@
               <option value="reaccion">Reacción</option>
             </select>
           </div>
-        </div>
-          
-        <div class="w-full" id="results-box"></div>
-    </div>
+        </section>
+      </header>
+
+      <article class="grid lg:grid-cols-5 gap-8">
+        <!-- Buttons and map section-->
+        <section id="map-button-container" class="lg:col-span-2 lg:order-2">
+          <div id="map" class="w-full h-96 relative">
+            <ul id="buttons-box" class="absolute bottom-8 left-4"></ul>
+          </div>
+        </section>
+
+        <!-- Results box-->
+        <section id="results-box" class="lg:col-span-3 lg:order-1 grid gap-10" ></div>
+      </article>
 
     <script src="config.js"></script>
     <script src="index.js"></script>
