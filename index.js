@@ -70,7 +70,7 @@ require([
       searchPanel.classList.add("mt-10");
 
       const listEl = document.createElement("div");
-      listEl.className = "listEl md:flex md:gap-8";
+      listEl.className = "md:flex md:gap-8";
       const noLogo = "geosearch.png";
       listEl.innerHTML = `
         <div class="w-24 h-auto">
@@ -80,7 +80,7 @@ require([
           <a class="text-sm" href="${el.attributes.url}" target="_blank">${
         el.attributes.url
       }</a>
-          <a class="text-xl text-blue-800 font-bold" href="${
+          <a class="text-xl text-blue-800 font-bold hover:underline" href="${
             el.attributes.url
           }" target="_blank"><h2>${el.attributes.name}</h2></a>
           <ul class="mt-2">
