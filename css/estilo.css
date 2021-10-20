@@ -2,7 +2,7 @@ body {
   background-color: #e6e6e6;
 }
 
-.listEl {
+/* .listEl {
   border: 1px solid black;
 }
 
@@ -14,7 +14,7 @@ body {
 
 #map-button-container {
   display: flex;
-}
+} */
 
 #buttons-box button {
   background: white;

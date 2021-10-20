@@ -16,8 +16,7 @@ require([
   Graphic
 ) {
   //esriConfig.apiKey = apiKey;
-  esriConfig.apiKey =
-apiKey;
+  esriConfig.apiKey = apiKey;
   // Search widget which includes the locator. We will get the location from the results.
   const search = new Search({
     container: document.getElementById("search-box"),
@@ -71,15 +70,20 @@ apiKey;
       searchPanel.classList.add("mt-10");
 
       const listEl = document.createElement("div");
-      listEl.className = "listEl sm:flex p-2 my-5";
+      listEl.className = "md:flex md:gap-8";
       const noLogo = "geosearch.png";
       listEl.innerHTML = `
-        <div class="w-32 p-4">
+        <div class="w-24 h-auto">
           <img src=${el.attributes.logo ? el.attributes.logo : noLogo}></img>
         </div>
-        <div class="ml-5">
-          <h1 class="name">${el.attributes.name}</h1>
-          <ul class="features">
+        <div>
+          <a class="text-sm" href="${el.attributes.url}" target="_blank">${
+        el.attributes.url
+      }</a>
+          <a class="text-xl text-blue-800 font-bold hover:underline" href="${
+            el.attributes.url
+          }" target="_blank"><h2>${el.attributes.name}</h2></a>
+          <ul class="mt-2">
             <li><strong>Riesgo: </strong>${
               el.attributes.hazardType ? el.attributes.hazardType : ""
             }</li>
@@ -98,9 +102,6 @@ apiKey;
               el.attributes.description ? el.attributes.description : ""
             }</li>
           </ul>
-          <a class="url" href="${el.attributes.url}" target="_blank">${
-        el.attributes.url
-      }</a>
         </div>
       `;
 
