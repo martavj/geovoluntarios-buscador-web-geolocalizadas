@@ -14,7 +14,7 @@ Use cases:
 
 This is a client-side application and you will need:
 
-- A web server need to be installed (Apache, Nginx, IIS, https-server, live server, ...).
+- A web server need to be installed, for example [Vscode live](https://www.youtube.com/watch?v=eM2xzvUTasQ) , python simple httpserver ( `python3 -m http.server` ) or npx (`npx http-server`) .
 - A free ArcGIS Developer account ([Sign-up](https://developers.arcgis.com/sign-up) - [how-to video](https://www.youtube.com/watch?v=bhPmRr7OH8k))
 - Create an API key ([how-to video](https://www.youtube.com/watch?v=Q1x4NZPK8Ws&t=8s) - [docs](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys/))
 
