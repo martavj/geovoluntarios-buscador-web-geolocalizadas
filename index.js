@@ -34,6 +34,11 @@ require([
   const resultsBoxEl = document.getElementById("results-box");
 
   search.on("select-result", function (event) {
+    // move searchbox to the top
+    const searchPanel = document.getElementById("search-panel");
+    searchPanel.classList.remove("h-screen");
+    searchPanel.classList.add("mt-10");
+
     database
       .queryFeatures({
         geometry: event.result.feature.geometry,
@@ -49,7 +54,7 @@ require([
           //Add map
           showMap(locationLongitude, locationLatitude);
           //Get info list
-          getList(res, locationLatitude, locationLongitude);
+          getList(res);
         } else {
           resultsBoxEl.innerHTML = "<p>No hay resultados</p>";
         }
@@ -62,13 +67,9 @@ require([
   });
 
   //Get list of results
-  getList = (res, locationLongitude, locationLatitude) => {
+  getList = (res) => {
     console.log("Getting list...");
     res.features.forEach((el) => {
-      const searchPanel = document.getElementById("search-panel");
-      searchPanel.classList.remove("h-screen");
-      searchPanel.classList.add("mt-10");
-
       const listEl = document.createElement("div");
       listEl.className = "md:flex md:gap-8";
       const noLogo = "geosearch.png";
