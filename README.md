@@ -18,6 +18,13 @@ This is a client-side application and you will need:
 - A free ArcGIS Developer account ([Sign-up](https://developers.arcgis.com/sign-up) - [how-to video](https://www.youtube.com/watch?v=bhPmRr7OH8k))
 - Create an API key ([how-to video](https://www.youtube.com/watch?v=Q1x4NZPK8Ws&t=8s) - [docs](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys/))
 
+## Add new data
+1. Copy the data of the [data file](https://github.com/GeoVoluntarios/geosearch/blob/master/data/data.json?short_path=39e5186)
+2. Open [geojson.io](https://geojson.io) and paste the data
+3. Draw the area of the hazard
+4. Go to the code area and fill the properties (`name`,`url`,`logo`,`hazardType`,`territorialScope`,`languages`,`infoCategory`,`contentType`)
+5. Copy the code of geojson.io and paste on the data.json
+
 ## Development setup
 
 1. Clone this repo: `$git clone git@github.com:GeoVoluntarios/geovoluntarios-buscador-web-geolocalizadas.git`
