@@ -49,7 +49,10 @@
             >
           </div>
           <!-- Mobile menu button -->
-          <div class="flex md:hidden">
+          <div class="flex md:hidden"
+          id="hamburguerMenu"
+          >
+
             <button
               type="button"
               class="
@@ -73,7 +76,7 @@
         </div>
 
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-        <div class="items-center md:flex">
+        <div class="items-center md:flex" id="layoutMenu">
           <div class="flex flex-col md:flex-row md:mx-6">
             <a
               class="
@@ -83,6 +86,7 @@
                 hover:text-indigo-500
                 dark:hover:text-indigo-400
                 md:mx-4 md:my-0
+                hiddenMobile
               "
               href="index.html"
               >Buscador</a
@@ -95,6 +99,7 @@
                 hover:text-indigo-500
                 dark:hover:text-indigo-400
                 md:mx-4 md:my-0
+                hiddenMobile
               "
               href="https://arcg.is/0mbyKT0"
               >Proponer fuente</a
@@ -107,6 +112,7 @@
                 hover:text-indigo-500
                 dark:hover:text-indigo-400
                 md:mx-4 md:my-0
+                hiddenMobile
               "
               href="src/howtohelp/howToHelp.html"
               >Como ayudar</a
@@ -119,6 +125,7 @@
                 hover:text-indigo-500
                 dark:hover:text-indigo-400
                 md:mx-4 md:my-0
+                hiddenMobile
               "
               href="src/about/about.html"
               >Quienes somos</a
@@ -178,6 +185,7 @@
 
     <script src="config.js"></script>
     <script src="index.js"></script>
+    <script src="logic/toggleHamburgerMenu.js"></script>
   </body>
 
   <footer></footer>
