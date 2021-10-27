@@ -21,51 +21,160 @@
 
     <script src="https://js.arcgis.com/4.20/"></script>
   </head>
-
   <body>
-    <div class="container mx-auto">
+    <nav class="bg-white shadow dark:bg-gray-800">
+      <div
+        class="
+          container
+          px-6
+          py-3
+          mx-auto
+          md:flex md:justify-between md:items-center
+        "
+      >
+        <div class="flex items-center justify-between">
+          <div>
+            <a
+              class="
+                text-xl
+                font-bold
+                text-gray-800
+                dark:text-white
+                md:text-2xl
+                hover:text-gray-700
+                dark:hover:text-gray-300
+              "
+              href="index.html"
+              >InfoRiesgo</a
+            >
+          </div>
+          <!-- Mobile menu button -->
+          <div class="flex md:hidden">
+            <button
+              type="button"
+              class="
+                text-gray-500
+                dark:text-gray-200
+                hover:text-gray-600
+                dark:hover:text-gray-400
+                focus:outline-none focus:text-gray-600
+                dark:focus:text-gray-400
+              "
+              aria-label="toggle menu"
+            >
+              <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                <path
+                  fill-rule="evenodd"
+                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
 
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div class="items-center md:flex">
+          <div class="flex flex-col md:flex-row md:mx-6">
+            <a
+              class="
+                my-1
+                text-gray-700
+                dark:text-gray-200
+                hover:text-indigo-500
+                dark:hover:text-indigo-400
+                md:mx-4 md:my-0
+              "
+              href="index.html"
+              >Buscador</a
+            >
+            <a
+              class="
+                my-1
+                text-gray-700
+                dark:text-gray-200
+                hover:text-indigo-500
+                dark:hover:text-indigo-400
+                md:mx-4 md:my-0
+              "
+              href="https://arcg.is/0mbyKT0"
+              >Proponer fuente</a
+            >
+            <a
+              class="
+                my-1
+                text-gray-700
+                dark:text-gray-200
+                hover:text-indigo-500
+                dark:hover:text-indigo-400
+                md:mx-4 md:my-0
+              "
+              href="src/howtohelp/howToHelp.html"
+              >Como ayudar</a
+            >
+            <a
+              class="
+                my-1
+                text-gray-700
+                dark:text-gray-200
+                hover:text-indigo-500
+                dark:hover:text-indigo-400
+                md:mx-4 md:my-0
+              "
+              href="src/about/about.html"
+              >Quienes somos</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container w-full mx-auto my-10 text-center rounded-xl">
       <!-- Search panel-->
-      <header id="search-panel" class="max-w-2xl h-screen flex flex-col justify-center items-center mx-auto px-6 md:px-0 ">
-        <h1 class="text-5xl mb-8">InfoRiesgo</h1>
+      <div
+        id="search-panel"
+        class="flex flex-col justify-center items-center mx-auto px-6 md:px-0"
+      >
         <div class="w-full mb-8" id="search-box"></div>
         <!-- Filters -->
-        <section id=#filters class="w-full flex flex-wrap gap-y-2 gap-x-8 justify-between mb-12">
+        <section
+          id="#filters"
+          class="w-full flex flex-wrap gap-y-2 gap-x-8 justify-between mb-12"
+        >
           <div>
-            <label class="mr-5" for="riesgos">Riesgos</label>
-            <select class="p-1" name="riesgos" id="riesgos">
-              <option value="todos">Todos</option>
-              <option value="incendios">Natural - Incendios</option>
-              <option value="sismicos">Natural - Sísmicos</option>
-              <option value="meteorologico">Natural - Meteorológico</option>
-              <option value="quimicos">Químicos</option>
-              <option value="seguridad">Seguridad ciudadana</option>
+            <label class="mr-5" for="hazardType">Riesgos</label>
+            <select class="p-1" name="hazardType" id="hazardType">
+              <option value="all">Todos</option>
+              <option value="fire">Natural - Incendios</option>
+              <option value="seismic">Natural - Sísmicos</option>
+              <option value="weather">Natural - Meteorológico</option>
+              <option value="chemical">Químicos</option>
+              <option value="security">Seguridad ciudadana</option>
               <option value="nuclear">Nuclear</option>
             </select>
           </div>
           <div>
-            <label class="mr-5" for="informacion">Información</label>
-            <select class="p-1" name="informacion" id="informacion">
-              <option value="toda">Toda</option>
-              <option value="historias">Historias reales</option>
-              <option value="prevencion">Prevención</option>
-              <option value="reaccion">Reacción</option>
+            <label class="mr-5" for="information">Información</label>
+            <select class="p-1" name="information" id="information">
+              <option value="all">Toda</option>
+              <option value="stories">Historias reales</option>
+              <option value="prevention">Prevención</option>
+              <option value="reaction">Reacción</option>
             </select>
           </div>
         </section>
-      </header>
+        <article class="grid lg:grid-cols-6 gap-16 px-6 md:px-0">
+          <!-- Buttons and map section-->
+          <section id="map-button-container" class="lg:col-span-3">
+            <div id="map" class="w-full h-96 relative">
+              <ul id="buttons-box" class="absolute bottom-8 left-4"></ul>
+            </div>
+          </section>
 
-      <article class="grid lg:grid-cols-5 gap-16 px-6 md:px-0">
-        <!-- Buttons and map section-->
-        <section id="map-button-container" class="lg:col-span-2">
-          <div id="map" class="w-full h-96 relative">
-            <ul id="buttons-box" class="absolute bottom-8 left-4"></ul>
-          </div>
-        </section>
-
-        <!-- Results box-->
-        <section id="results-box" class="lg:col-span-3 grid gap-10" ></section>
-      </article>
+          <!-- Results box-->
+          <section id="results-box" class="lg:col-span-3 grid gap-10"></section>
+        </article>
+      </div>
+    </div>
 
     <script src="config.js"></script>
     <script src="index.js"></script>
