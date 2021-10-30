@@ -27,3 +27,12 @@ body {
   color: #2e2e2e;
   background-color: #f3f3f3;
 }
+.hiddenMobile{
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .hiddenMobile{
+    display: block;
+  }
+}
